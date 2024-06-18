@@ -1,0 +1,26 @@
+<div>
+    <h3>Layers</h3>
+    <div>
+      <input type="text" [(ngModel)]="newLayer" placeholder="New Layer Name" />
+      <button (click)="addMainLayer(newLayer)">Add Layer</button>
+    </div>
+    <ul>
+      <li *ngFor="let layer of layers">
+        <div>
+          <strong>{{ layer.name }}</strong>
+          <button (click)="deleteMainLayer(layer.name)">Delete</button>
+        </div>
+        <div>
+          <input type="text" [(ngModel)]="newSubLayer" placeholder="New Sub-Layer Name" />
+          <button (click)="addSubLayer(layer.name, newSubLayer)">Add Sub-Layer</button>
+        </div>
+        <ul>
+          <li *ngFor="let subLayer of layer.subLayers">
+            <span (click)="selectLayer(layer.name, subLayer)" [class.selected]="selectedLayer === layer.name + ':' + subLayer">{{ subLayer }}</span>
+            <button (click)="deleteSubLayer(layer.name, subLayer)">Delete</button>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  
