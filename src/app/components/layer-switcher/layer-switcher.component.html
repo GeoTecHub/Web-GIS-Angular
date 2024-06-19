@@ -5,6 +5,7 @@
       <button (click)="addMainLayer(newLayer)">Add Layer</button>
     </div>
     <ul>
+
       <li *ngFor="let layer of layers">
         <div>
           <strong>{{ layer.name }}</strong>
@@ -14,6 +15,7 @@
           <input type="text" [(ngModel)]="newSubLayer" placeholder="New Sub-Layer Name" />
           <button (click)="addSubLayer(layer.name, newSubLayer)">Add Sub-Layer</button>
         </div>
+      
         <ul>
           <li *ngFor="let subLayer of layer.subLayers">
             <span (click)="selectLayer(layer.name, subLayer)" [class.selected]="selectedLayer === layer.name + ':' + subLayer">{{ subLayer }}</span>

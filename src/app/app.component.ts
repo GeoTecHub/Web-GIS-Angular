@@ -11,9 +11,17 @@ import { routes } from './app.routes';
 })
 export class AppComponent {
   title = 'webgis-project';
+  modal='modal';
+
   selectedLayer: string | null = null;
   onLayerChange(selectedLayer: string): void {
     this.selectedLayer = selectedLayer;
   }
-
+  openModal(inp: string) {
+    console.log(inp);
+    this.modal='modal';
+  }
+  closeModal(){
+    this.modal='modal';
+  }
 }

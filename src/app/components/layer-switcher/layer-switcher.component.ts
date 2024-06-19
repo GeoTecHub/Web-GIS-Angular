@@ -14,7 +14,6 @@ export class LayerSwitcherComponent {
   layers: { name: string, subLayers: string[] }[] = [];
   newLayer: string = '';
   newSubLayer: string = '';
- 
   @Input() selectedLayer: string | null = null; 
   @Output() layerChange = new EventEmitter<string>();
 
@@ -52,4 +51,6 @@ export class LayerSwitcherComponent {
     this.selectedLayer = `${mainLayerName}:${subLayerName}`;
     this.layerChange.emit(this.selectedLayer); // this where the parameter passed to the other comonetts 
   }
+
+
 }
