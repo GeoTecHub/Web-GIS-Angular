@@ -32,7 +32,7 @@ export class MapComponent implements OnInit, AfterViewInit {
     this.openLayerService.addselectionInteraction();
   }
   setDrawingType(type: 'Point' | 'LineString' | 'Polygon'): void {
-    if (this.parentSelectedLayer!) { // where does this comes from??
+    // if (this.parentSelectedLayer!) { // where does this comes from??
       this.openLayerService.addDrawingInteraction(
         type,
         (drawnFeature: Feature<Geometry>) => {
@@ -41,9 +41,9 @@ export class MapComponent implements OnInit, AfterViewInit {
           this.openLayerService.assignFeatureToLayer(drawnFeature, this.parentSelectedLayer!); // this where the feature is adding to the selected layer
         }
       );
-    } else{
-      alert('Please select a layer to draw')
-    }
+    // } else{
+    //   alert('Please select a layer to draw')
+    // }
   }
 
   togglesnap(): void {
